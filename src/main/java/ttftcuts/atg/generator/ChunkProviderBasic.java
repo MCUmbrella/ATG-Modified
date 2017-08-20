@@ -15,7 +15,6 @@ import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.gen.*;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenLakes;
@@ -30,7 +29,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.function.Function;
 
 public class ChunkProviderBasic implements IChunkGenerator {
     protected final World world;
@@ -44,7 +42,7 @@ public class ChunkProviderBasic implements IChunkGenerator {
     protected NoiseGeneratorPerlin surfaceNoise;
 
     protected double[] depthBuffer = new double[256];
-    protected ChunkProviderSettings basicSettings = ChunkProviderSettings.Factory.jsonToFactory("").build();
+    protected ChunkGeneratorSettings basicSettings = ChunkGeneratorSettings.Factory.jsonToFactory("").build();
 
     public ChunkProviderBasic(World world) {
         this.world = world;
@@ -144,7 +142,7 @@ public class ChunkProviderBasic implements IChunkGenerator {
     }
 
     @Override
-    public Chunk provideChunk(int x, int z) {
+    public Chunk generateChunk(int x, int z) {
         ChunkPrimer chunkprimer = new ChunkPrimer();
 
         this.fillChunk(x,z,chunkprimer);
@@ -198,6 +196,8 @@ public class ChunkProviderBasic implements IChunkGenerator {
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, this.world, this.random, x, z, hasVillage);
 
         hasVillage = this.populateFeatures(chunkpos);
+
+
 
         if (biome != Biomes.DESERT && biome != Biomes.DESERT_HILLS && this.basicSettings.useWaterLakes && !hasVillage && this.random.nextInt(this.basicSettings.waterLakeChance) == 0) {
             if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, hasVillage, PopulateChunkEvent.Populate.EventType.LAKE)) {
@@ -286,12 +286,23 @@ public class ChunkProviderBasic implements IChunkGenerator {
         return biome.getSpawnableList(creatureType);
     }
 
-    @Nullable
     @Override
-    public BlockPos getStrongholdGen(World worldIn, String structureName, BlockPos position, boolean flag) {
+    public boolean isInsideStructure(World worldIn, String structureName, BlockPos position) {
         for (String name : this.structureGenerators.keySet()) {
             if (structureName.equals(name)) {
-                return this.structureGenerators.get(name).getClosestStrongholdPos(worldIn, position, flag);
+                return this.structureGenerators.get(name).isPositionInStructure(worldIn, position);
+            }
+        }
+
+        return false;
+    }
+
+    @Nullable
+    @Override
+    public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean findUnexplored) {
+        for (String name : this.structureGenerators.keySet()) {
+            if (structureName.equals(name)) {
+                return this.structureGenerators.get(name).getNearestStructurePos(worldIn, position, findUnexplored);
             }
         }
 

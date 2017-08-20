@@ -2,14 +2,11 @@ package ttftcuts.atg.biome;
 
 import net.minecraft.block.BlockDirt;
 import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import ttftcuts.atg.ATGBiomes;
 import ttftcuts.atg.util.MathUtil;
 
 import java.util.Random;
@@ -25,12 +22,12 @@ public class BiomeScrubland extends Biome {
                 .setRainDisabled()
         );
 
-        this.theBiomeDecorator.treesPerChunk = -999;
-        this.theBiomeDecorator.deadBushPerChunk = 50;
-        this.theBiomeDecorator.reedsPerChunk = 10;
-        this.theBiomeDecorator.cactiPerChunk = 4;
-        this.theBiomeDecorator.flowersPerChunk = 2;
-        this.theBiomeDecorator.grassPerChunk = 4;
+        this.decorator.treesPerChunk = -999;
+        this.decorator.deadBushPerChunk = 50;
+        this.decorator.reedsPerChunk = 10;
+        this.decorator.cactiPerChunk = 4;
+        this.decorator.flowersPerChunk = 2;
+        this.decorator.grassPerChunk = 4;
         this.spawnableCreatureList.clear();
         this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityCow.class, 6, 4, 4));
         this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityRabbit.class, 4, 2, 3));

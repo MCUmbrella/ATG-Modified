@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 import ttftcuts.atg.biome.*;
 import ttftcuts.atg.biome.heightmods.*;
 import ttftcuts.atg.generator.biome.IBiomeHeightModifier;
@@ -28,9 +28,12 @@ public abstract class ATGBiomes {
     public static Biome GRAVEL_BEACH;
     public static Biome GRAVEL_BEACH_SNOWY;
 
-    public static void init() {
+    private static IForgeRegistry<Biome> registry;
+
+    public static void init(IForgeRegistry<Biome> registry) {
         HeightModifiers.init();
 
+        ATGBiomes.registry = registry;
         SHRUBLAND = register("shrubland", new BiomeShrubland(), true, Type.PLAINS, Type.SPARSE);
         WOODLAND = register("woodland", new BiomeWoodland(), false, Type.FOREST);
         TROPICAL_SHRUBLAND = register("tropical_shrubland", new BiomeTropicalShrubland(), false, Type.HOT, Type.WET, Type.JUNGLE, Type.FOREST, Type.SAVANNA);
@@ -42,7 +45,7 @@ public abstract class ATGBiomes {
 
     public static Biome register(String name, Biome biome, boolean villages, BiomeDictionary.Type... dictionaryTypes) {
         biome.setRegistryName(ATG.MODID, name);
-        GameRegistry.register(biome);
+        ATGBiomes.registry.register(biome);
 
         if (villages) {
             BiomeManager.addVillageBiome(biome, true);

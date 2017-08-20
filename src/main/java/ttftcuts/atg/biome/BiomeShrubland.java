@@ -17,15 +17,15 @@ public class BiomeShrubland extends Biome {
                 .setRainfall(0.53f)
         );
 
-        this.theBiomeDecorator.treesPerChunk = 1;
-        this.theBiomeDecorator.grassPerChunk = 7;
-        this.theBiomeDecorator.flowersPerChunk = 3;
+        this.decorator.treesPerChunk = 1;
+        this.decorator.grassPerChunk = 7;
+        this.decorator.flowersPerChunk = 3;
 
         this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityHorse.class, 2, 2, 4));
     }
 
     @Override
-    public WorldGenAbstractTree genBigTreeChance(Random rand)
+    public WorldGenAbstractTree getRandomTreeFeature(Random rand)
     {
         return rand.nextInt(3) != 0 ? ATGBiomes.Features.OAK_SHRUB : Biome.TREE_FEATURE;
     }

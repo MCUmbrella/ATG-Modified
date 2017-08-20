@@ -15,7 +15,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 apply plugin: 'java'
@@ -44,10 +44,10 @@ targetCompatibility = JavaVersion.VERSION_1_8
 minecraft {
     version = "${config.minecraft_version}-${config.forge_version}"
     runDir = "run"
-    
+
     mappings = config.mcp_mappings
     makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
+
     replace '@MOD_VERSION@', version
     replace '@MOD_ID@', config.mod_id
 }
@@ -65,17 +65,17 @@ processResources
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+
         // replace version and mcversion
         expand ([
-			'version': project.version, 
+			'version': project.version,
 			'mcversion': project.minecraft.version,
 			'forge_version': config.forge_version,
             'mod_version': config.mod_version,
             'minecraft_version': config.minecraft_version
 		])
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'

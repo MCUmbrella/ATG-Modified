@@ -91,10 +91,10 @@ public class GrassColours {
 
         // get the version of the method used by the object to be wrapped - avoids exceptions for calling an abstract method
         Class wrappedResolverClass = wrappedResolver.getClass();
-        Method wrappedGetColorAtPos = ReflectionHelper.findMethod(wrappedResolverClass, null, GET_COLOR_AT_POS, Biome.class, BlockPos.class);
+        Method wrappedGetColorAtPos = ReflectionHelper.findMethod(wrappedResolverClass, GET_COLOR_AT_POS[1], GET_COLOR_AT_POS[2], Biome.class, BlockPos.class);
 
         // build a proxy
-        Method getColorAtPos = ReflectionHelper.findMethod(colorResolver, null, GET_COLOR_AT_POS, Biome.class, BlockPos.class);
+        Method getColorAtPos = ReflectionHelper.findMethod(colorResolver, GET_COLOR_AT_POS[1], GET_COLOR_AT_POS[2], Biome.class, BlockPos.class);
         Object proxy = Proxy.newProxyInstance(colorResolver.getClassLoader(), new Class[] { colorResolver }, new GrassHandler(getColorAtPos, wrappedResolver, wrappedGetColorAtPos) );
 
         // set the field

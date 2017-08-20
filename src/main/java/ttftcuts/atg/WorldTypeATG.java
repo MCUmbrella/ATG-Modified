@@ -3,20 +3,12 @@ package ttftcuts.atg;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiCreateWorld;
-import net.minecraft.init.Biomes;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeProvider;
-import net.minecraft.world.biome.BiomeProviderSingle;
-import net.minecraft.world.chunk.IChunkGenerator;
-import net.minecraft.world.gen.layer.GenLayer;
+import net.minecraft.world.gen.IChunkGenerator;
 import ttftcuts.atg.generator.BiomeProviderATG;
 import ttftcuts.atg.generator.ChunkProviderATG;
-import ttftcuts.atg.generator.ChunkProviderBasic;
-import ttftcuts.atg.settings.BiomeSettings;
-import ttftcuts.atg.settings.DefaultBiomeSettings;
-import ttftcuts.atg.settings.DefaultWorldSettings;
-import ttftcuts.atg.util.GeneralUtil;
 
 public class WorldTypeATG extends WorldType {
     public WorldTypeATG(String name) {

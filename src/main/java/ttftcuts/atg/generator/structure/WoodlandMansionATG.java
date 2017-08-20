@@ -12,6 +12,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.structure.*;
 import ttftcuts.atg.generator.ChunkProviderBasic;
 
+import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -69,11 +70,12 @@ public class WoodlandMansionATG extends MapGenStructure
         return false;
     }
 
-    public BlockPos getClosestStrongholdPos(World worldIn, BlockPos pos, boolean flag)
-    {
+    @Nullable
+    @Override
+    public BlockPos getNearestStructurePos(World worldIn, BlockPos pos, boolean findUnexplored) {
         this.world = worldIn;
         BiomeProvider biomeprovider = worldIn.getBiomeProvider();
-        return biomeprovider.isFixedBiome() && biomeprovider.getFixedBiome() != Biomes.ROOFED_FOREST ? null : findNearestStructurePosBySpacing(worldIn, this, pos, 80, 20, 10387319, true, 100, flag);
+        return biomeprovider.isFixedBiome() && biomeprovider.getFixedBiome() != Biomes.ROOFED_FOREST ? null : findNearestStructurePosBySpacing(worldIn, this, pos, 80, 20, 10387319, true, 100, findUnexplored);
     }
 
     protected StructureStart getStructureStart(int chunkX, int chunkZ)

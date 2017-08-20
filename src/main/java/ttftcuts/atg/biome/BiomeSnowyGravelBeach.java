@@ -18,9 +18,9 @@ public class BiomeSnowyGravelBeach extends Biome
         this.spawnableCreatureList.clear();
         this.topBlock = Blocks.GRAVEL.getDefaultState();
         this.fillerBlock = Blocks.GRAVEL.getDefaultState();
-        this.theBiomeDecorator.treesPerChunk = -999;
-        this.theBiomeDecorator.deadBushPerChunk = 0;
-        this.theBiomeDecorator.reedsPerChunk = 0;
-        this.theBiomeDecorator.cactiPerChunk = 0;
+        this.decorator.treesPerChunk = -999;
+        this.decorator.deadBushPerChunk = 0;
+        this.decorator.reedsPerChunk = 0;
+        this.decorator.cactiPerChunk = 0;
     }
 }

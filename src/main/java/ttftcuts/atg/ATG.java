@@ -1,7 +1,6 @@
 package ttftcuts.atg;
 
 import net.minecraft.world.gen.structure.MapGenStructureIO;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
@@ -10,12 +9,10 @@ import org.apache.logging.log4j.Logger;
 import ttftcuts.atg.compat.ModCompat;
 import ttftcuts.atg.configuration.ConfigHandler;
 import ttftcuts.atg.generator.GlobalRegistry;
-import ttftcuts.atg.generator.biome.VillageBlocks;
 import ttftcuts.atg.generator.structure.WoodlandMansionATG;
 import ttftcuts.atg.proxy.CommonProxy;
-import ttftcuts.atg.tweaks.GrassColours;
 
-@Mod(modid = ATG.MODID, version = ATG.VERSION)
+@Mod(modid = ATG.MODID, version = ATG.VERSION, acceptedMinecraftVersions = "[1.12,1.13)")
 public class ATG
 {
     public static final String MODID = "atg";

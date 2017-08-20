@@ -23,11 +23,11 @@ public class BiomeTundra extends Biome {
                 .setRainfall(0.45f)
         );
 
-        this.theBiomeDecorator.treesPerChunk = 1;
-        this.theBiomeDecorator.grassPerChunk = 10;
-        this.theBiomeDecorator.flowersPerChunk = 2;
-        this.theBiomeDecorator.reedsPerChunk = -999;
-        this.theBiomeDecorator.cactiPerChunk = -999;
+        this.decorator.treesPerChunk = 1;
+        this.decorator.grassPerChunk = 10;
+        this.decorator.flowersPerChunk = 2;
+        this.decorator.reedsPerChunk = -999;
+        this.decorator.cactiPerChunk = -999;
 
         this.spawnableCreatureList.clear();
         this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityRabbit.class, 10, 2, 3));
@@ -35,7 +35,7 @@ public class BiomeTundra extends Biome {
     }
 
     @Override
-    public WorldGenAbstractTree genBigTreeChance(Random rand)
+    public WorldGenAbstractTree getRandomTreeFeature(Random rand)
     {
         return ATGBiomes.Features.TUNDRA_SHRUB;
     }

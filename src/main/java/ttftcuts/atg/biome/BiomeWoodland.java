@@ -15,13 +15,13 @@ public class BiomeWoodland extends Biome {
                 .setRainfall(0.67f)
         );
 
-        this.theBiomeDecorator.treesPerChunk = 5;
-        this.theBiomeDecorator.grassPerChunk = 4;
-        this.theBiomeDecorator.flowersPerChunk = 3;
+        this.decorator.treesPerChunk = 5;
+        this.decorator.grassPerChunk = 4;
+        this.decorator.flowersPerChunk = 3;
     }
 
     @Override
-    public WorldGenAbstractTree genBigTreeChance(Random rand)
+    public WorldGenAbstractTree getRandomTreeFeature(Random rand)
     {
         return rand.nextInt(4) == 0 ? ATGBiomes.Features.OAK_SHRUB : Biome.TREE_FEATURE;
     }
