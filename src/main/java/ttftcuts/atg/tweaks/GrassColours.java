@@ -4,39 +4,32 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraft.world.chunk.Chunk;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ttftcuts.atg.ATG;
-import ttftcuts.atg.util.CoordCache;
-import ttftcuts.atg.util.CoordPair;
 import ttftcuts.atg.util.GeneralUtil;
 import ttftcuts.atg.util.MathUtil;
+import ttftcuts.atg.util.ObfuscationReflectionHelperEx;
 
 import java.lang.reflect.*;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 @SideOnly(Side.CLIENT)
 public class GrassColours {
-    private static final String[] GRASS_COLOR = {"a", "field_180291_a", "GRASS_COLOR"};
     private static final String[] COLOR_RESOLVER = {"ais$a", "net.minecraft.world.biome.BiomeColorHelper$ColorResolver"};
-    private static final String[] GET_COLOR_AT_POS = {"a", "func_180283_a", "getColorAtPos"};
+    private static final String[] GET_COLOR_AT_POS = {"a", "getColorAtPos", "func_180285_a"};
 
     public static LoadingCache<GrassCacheKey, Biome> grassCache;
 
@@ -71,7 +64,7 @@ public class GrassColours {
 
     public static void doImmenseEvil() throws Exception {
         // de-finalise the grass colour field
-        Field grass_color = ReflectionHelper.findField(BiomeColorHelper.class, GRASS_COLOR);
+        Field grass_color = ObfuscationReflectionHelperEx.findField(BiomeColorHelper.class, "GRASS_COLOR");
         grass_color.setAccessible(true);
 
         Field modifiers = Field.class.getDeclaredField("modifiers");
