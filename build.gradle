@@ -52,8 +52,16 @@ minecraft {
     replace '@MOD_ID@', config.mod_id
 }
 
-dependencies {
+repositories {
+    maven {
+        name = "mcjty"
+        url = "http://maven.k-4u.nl"
+    }
+}
 
+dependencies {
+    compile "com.github.mcjty:lostcities:${config.lostcities_version}:api"
+    runtime "com.github.mcjty:lostcities:${config.lostcities_version}:dev"
 }
 
 processResources
