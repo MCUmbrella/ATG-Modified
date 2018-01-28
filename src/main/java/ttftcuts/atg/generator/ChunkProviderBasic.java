@@ -70,7 +70,7 @@ public class ChunkProviderBasic implements IChunkGenerator {
                 MapGenScatteredFeature gen = (MapGenScatteredFeature)s;
                 if (type == EnumCreatureType.MONSTER && gen.isSwampHut(pos))
                 {
-                    return gen.getScatteredFeatureSpawnList();
+                    return gen.getMonsters();
                 }
                 return null;
             });
@@ -85,7 +85,7 @@ public class ChunkProviderBasic implements IChunkGenerator {
                 StructureOceanMonument gen = (StructureOceanMonument)s;
                 if (type == EnumCreatureType.MONSTER && s.isPositionInStructure(this.world, pos))
                 {
-                    return gen.getScatteredFeatureSpawnList();
+                    return gen.getMonsters();
                 }
                 return null;
             });
@@ -320,7 +320,7 @@ public class ChunkProviderBasic implements IChunkGenerator {
     //------------ Intervention ------------//
 
     public float getFloatTemperature(Biome biome, BlockPos pos) {
-        return biome.getFloatTemperature(pos);
+        return biome.getTemperature(pos);
     }
 
     public boolean canSnowAt(World world, BlockPos pos, boolean checkLight) {
