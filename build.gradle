@@ -60,8 +60,8 @@ repositories {
 }
 
 dependencies {
-    compile "com.github.mcjty:lostcities:${config.lostcities_version}:api"
-    runtime "com.github.mcjty:lostcities:${config.lostcities_version}:dev"
+    compile "com.github.mcjty:lostcities:${config.lostcities_version}"
+    //runtime "com.github.mcjty:lostcities:${config.lostcities_version}:dev"
 }
 
 processResources

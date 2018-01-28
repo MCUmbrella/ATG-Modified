@@ -30,7 +30,8 @@ public class WorldTypeATG extends WorldType {
         // testing time
         ATG.logger.info("wheee");
 
-        /*BiomeSettings testsettings = new DefaultBiomeSettings();
+        /*
+        BiomeSettings testsettings = new DefaultBiomeSettings();
 
         BiomeSettings testammendment = new BiomeSettings();
         BiomeSettings.BiomeReplacement testreplace = new BiomeSettings.BiomeReplacement();
@@ -52,7 +53,8 @@ public class WorldTypeATG extends WorldType {
         /*DefaultWorldSettings testsettings = new DefaultWorldSettings();
         testsettings.applyDefaultModuleStack();
 
-        ATG.logger.info(testsettings.writeToJson());*/
+        ATG.logger.info(testsettings.writeToJson());
+        */
     }
 
     @Override

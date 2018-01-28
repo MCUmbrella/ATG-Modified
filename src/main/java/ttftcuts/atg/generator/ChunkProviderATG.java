@@ -1,12 +1,12 @@
 package ttftcuts.atg.generator;
 
+import mcjty.lostcities.api.IChunkPrimerFactory;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
-import ttftcuts.atg.ATG;
 import ttftcuts.atg.generator.biome.BiomeRegistry;
 import ttftcuts.atg.settings.ChunkGeneratorSettings;
 import ttftcuts.atg.settings.WorldSettings;
@@ -17,8 +17,7 @@ import ttftcuts.atg.util.MathUtil;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ChunkProviderATG extends ChunkProviderBasic {
-
+public class ChunkProviderATG extends ChunkProviderBasic implements IChunkPrimerFactory {
     public static final int BLEND_RADIUS = 5;
     public static final Kernel BLEND_KERNEL = new Kernel(BLEND_RADIUS, (int x, int z) -> {
         double dist = Math.sqrt(x*x+z*z);
@@ -85,6 +84,25 @@ public class ChunkProviderATG extends ChunkProviderBasic {
                 }
             }
         }
+    }
+
+    @Override
+    public int getHeight(int chunkX, int chunkZ, int ix, int iz) {
+        BiomeProviderATG provider = GeneralUtil.getATGBiomeProvider(this.world);
+        if (provider == null) {
+            return 128;
+        }
+
+        double height;
+        int water = 63;
+
+        int x = chunkX*16 + ix;
+        int z = chunkZ*16 + iz;
+        height = provider.noise.getHeight(x,z);
+        height = this.getBiomeNoiseBlend(x,z, height, provider);
+
+        int heightInt = (int)Math.floor(height * 255);
+        return Math.max(water, heightInt);
     }
 
     public double getBiomeNoiseBlend(int x, int z, double height, BiomeProviderATG provider) {

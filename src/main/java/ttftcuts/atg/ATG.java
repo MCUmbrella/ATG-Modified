@@ -1,12 +1,14 @@
 package ttftcuts.atg;
 
 import net.minecraft.world.gen.structure.MapGenStructureIO;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ttftcuts.atg.compat.ModCompat;
+import ttftcuts.atg.compat.lostcities.LostCitiesEventHandler;
 import ttftcuts.atg.configuration.ConfigHandler;
 import ttftcuts.atg.generator.GlobalRegistry;
 import ttftcuts.atg.generator.structure.WoodlandMansionATG;
@@ -39,6 +41,8 @@ public class ATG
 
         MapGenStructureIO.registerStructure(WoodlandMansionATG.Start.class, "ATGMansion");
         worldType = new WorldTypeATG("atg");
+
+        MinecraftForge.EVENT_BUS.register(LostCitiesEventHandler.class);
 
         proxy.preInit(event);
     }
