@@ -22,7 +22,7 @@ import net.minecraft.world.gen.structure.*;
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import ttftcuts.atg.generator.structure.WoodlandMansionATG;
+//import ttftcuts.atg.generator.structure.WoodlandMansionATG;
 
 import javax.annotation.Nullable;
 import java.util.LinkedHashMap;
@@ -90,7 +90,7 @@ public class ChunkProviderBasic implements IChunkGenerator {
                 return null;
             });
 
-            structureGenerators.put("Mansion", new WoodlandMansionATG(this));
+            //structureGenerators.put("Mansion", new WoodlandMansionATG(this));
         }
 
         featureGenerators.add(TerrainGen.getModdedMapGen(new MapGenCaves(), InitMapGenEvent.EventType.CAVE));

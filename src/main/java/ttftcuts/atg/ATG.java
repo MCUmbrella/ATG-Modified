@@ -11,7 +11,7 @@ import ttftcuts.atg.compat.ModCompat;
 import ttftcuts.atg.compat.lostcities.LostCitiesEventHandler;
 import ttftcuts.atg.configuration.ConfigHandler;
 import ttftcuts.atg.generator.GlobalRegistry;
-import ttftcuts.atg.generator.structure.WoodlandMansionATG;
+//import ttftcuts.atg.generator.structure.WoodlandMansionATG;
 import ttftcuts.atg.proxy.CommonProxy;
 
 @Mod(modid = ATG.MODID, version = ATG.VERSION, acceptedMinecraftVersions = "[1.12,1.13)")
@@ -39,7 +39,7 @@ public class ATG
     {
         config = new ConfigHandler(event.getSuggestedConfigurationFile());
 
-        MapGenStructureIO.registerStructure(WoodlandMansionATG.Start.class, "ATGMansion");
+        //MapGenStructureIO.registerStructure(WoodlandMansionATG.Start.class, "ATGMansion");
         worldType = new WorldTypeATG("atg");
 
         MinecraftForge.EVENT_BUS.register(LostCitiesEventHandler.class);

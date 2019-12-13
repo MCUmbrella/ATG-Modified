@@ -28,7 +28,7 @@ public class WorldTypeATG extends WorldType {
     @Override
     public void onCustomizeButton(Minecraft mc, GuiCreateWorld guiCreateWorld) {
         // testing time
-        ATG.logger.info("wheee");
+        ATG.logger.info("ATG STARTED!");
 
         /*
         BiomeSettings testsettings = new DefaultBiomeSettings();

@@ -3,7 +3,7 @@ package ttftcuts.atg.generator.biome;
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 import ttftcuts.atg.ATG;
-import ttftcuts.atg.ATGBiomes;
+//import ttftcuts.atg.ATGBiomes;
 import ttftcuts.atg.generator.CoreNoise;
 import ttftcuts.atg.settings.BiomeSettings;
 import ttftcuts.atg.util.MathUtil;

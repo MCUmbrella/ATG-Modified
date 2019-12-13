@@ -1,7 +1,7 @@
 package ttftcuts.atg.settings;
 
 import net.minecraft.init.Biomes;
-import ttftcuts.atg.ATGBiomes;
+//import ttftcuts.atg.ATGBiomes;
 import ttftcuts.atg.generator.biome.BiomeRegistry.EnumBiomeCategory;
 
 public class DefaultBiomeSettings extends BiomeSettings {
@@ -39,8 +39,8 @@ public class DefaultBiomeSettings extends BiomeSettings {
                 .addBiome(Biomes.JUNGLE);
 
         // Shrubland
-        b.addGroup(EnumBiomeCategory.LAND, "Shrubland", 0.77, 0.53, 0.35)
-                .addBiome(ATGBiomes.SHRUBLAND);
+        //b.addGroup(EnumBiomeCategory.LAND, "Shrubland", 0.77, 0.53, 0.35)
+        //        .addBiome(ATGBiomes.SHRUBLAND);
 
         // Boreal Forest
         b.addGroup(EnumBiomeCategory.LAND, "Boreal Forest", 0.4, 0.8, 0.4) // temp 0.25, height 0.35
@@ -48,8 +48,8 @@ public class DefaultBiomeSettings extends BiomeSettings {
                 .addBiome(Biomes.REDWOOD_TAIGA, 0.4);
 
         // Tundra
-        b.addGroup(EnumBiomeCategory.LAND, "Tundra", 0.25, 0.45, 0.325)
-                .addBiome(ATGBiomes.TUNDRA);
+        //b.addGroup(EnumBiomeCategory.LAND, "Tundra", 0.25, 0.45, 0.325)
+        //        .addBiome(ATGBiomes.TUNDRA);
 
         // Savanna
         b.addGroup(EnumBiomeCategory.LAND, "Savanna", 1.7, 0.55, 0.275)
@@ -57,16 +57,16 @@ public class DefaultBiomeSettings extends BiomeSettings {
                 .addBiome(Biomes.SAVANNA);
 
         // Tropical Shrubland
-        b.addGroup(EnumBiomeCategory.LAND, "Tropical Shrubland", 1.75, 0.65, 0.35)
-                .addBiome(ATGBiomes.TROPICAL_SHRUBLAND);
+        //b.addGroup(EnumBiomeCategory.LAND, "Tropical Shrubland", 1.75, 0.65, 0.35)
+        //        .addBiome(ATGBiomes.TROPICAL_SHRUBLAND);
 
         // Woodland
-        b.addGroup(EnumBiomeCategory.LAND, "Woodland", 0.7, 0.67, 0.3)
-                .addBiome(ATGBiomes.WOODLAND);
+        //b.addGroup(EnumBiomeCategory.LAND, "Woodland", 0.7, 0.67, 0.3)
+        //        .addBiome(ATGBiomes.WOODLAND);
 
         // Dry Scrubland
-        b.addGroup(EnumBiomeCategory.LAND, "Dry Scrubland", 1.8, 0.35, 0.325)
-                .addBiome(ATGBiomes.SCRUBLAND);
+        //b.addGroup(EnumBiomeCategory.LAND, "Dry Scrubland", 1.8, 0.35, 0.325)
+        //        .addBiome(ATGBiomes.SCRUBLAND);
 
         //------ Beach -----------------------
 
@@ -75,12 +75,12 @@ public class DefaultBiomeSettings extends BiomeSettings {
                 .addBiome(Biomes.BEACH);
 
         // Stone Beach
-        b.addGroup(EnumBiomeCategory.BEACH, "Cold Beach", 0.34, 0.5, 0.25) // 0.25, 0.4, 0.25
-                .addBiome(ATGBiomes.GRAVEL_BEACH);
+        //b.addGroup(EnumBiomeCategory.BEACH, "Cold Beach", 0.34, 0.5, 0.25) // 0.25, 0.4, 0.25
+        //        .addBiome(ATGBiomes.GRAVEL_BEACH);
 
         // Cold Beach
-        b.addGroup(EnumBiomeCategory.BEACH, "Snowy Beach", 0.0, 0.5, 0.26) // 0.0, 0.4, 0.25
-                .addBiome(ATGBiomes.GRAVEL_BEACH_SNOWY);
+        //b.addGroup(EnumBiomeCategory.BEACH, "Snowy Beach", 0.0, 0.5, 0.26) // 0.0, 0.4, 0.25
+        //        .addBiome(ATGBiomes.GRAVEL_BEACH_SNOWY);
 
 
 
@@ -141,25 +141,25 @@ public class DefaultBiomeSettings extends BiomeSettings {
 
         // copses and clearings
         double clearing = 0.10;
-        b.addSubBiome(Biomes.PLAINS, ATGBiomes.WOODLAND, clearing);
+        /*b.addSubBiome(Biomes.PLAINS, ATGBiomes.WOODLAND, clearing);
         b.addSubBiome(Biomes.PLAINS, ATGBiomes.SHRUBLAND, clearing);
         b.addSubBiome(ATGBiomes.SHRUBLAND, ATGBiomes.WOODLAND, clearing);
         b.addSubBiome(ATGBiomes.SHRUBLAND, Biomes.FOREST, clearing);
-        b.addSubBiome(ATGBiomes.TUNDRA, Biomes.TAIGA, clearing);
+        b.addSubBiome(ATGBiomes.TUNDRA, Biomes.TAIGA, clearing);*/
         b.addSubBiome(Biomes.EXTREME_HILLS, Biomes.EXTREME_HILLS_WITH_TREES, clearing);
 
         b.addSubBiome(Biomes.FOREST, Biomes.PLAINS, clearing);
-        b.addSubBiome(Biomes.FOREST, ATGBiomes.WOODLAND, clearing);
-        b.addSubBiome(Biomes.FOREST, ATGBiomes.SHRUBLAND, clearing);
+        //b.addSubBiome(Biomes.FOREST, ATGBiomes.WOODLAND, clearing);
+        //b.addSubBiome(Biomes.FOREST, ATGBiomes.SHRUBLAND, clearing);
         b.addSubBiome(Biomes.FOREST_HILLS, Biomes.PLAINS, clearing);
-        b.addSubBiome(Biomes.FOREST_HILLS, ATGBiomes.WOODLAND, clearing);
-        b.addSubBiome(Biomes.FOREST_HILLS, ATGBiomes.SHRUBLAND, clearing);
+        //b.addSubBiome(Biomes.FOREST_HILLS, ATGBiomes.WOODLAND, clearing);
+        //b.addSubBiome(Biomes.FOREST_HILLS, ATGBiomes.SHRUBLAND, clearing);
         b.addSubBiome(Biomes.BIRCH_FOREST, Biomes.PLAINS, clearing);
-        b.addSubBiome(Biomes.BIRCH_FOREST, ATGBiomes.SHRUBLAND, clearing);
+        //b.addSubBiome(Biomes.BIRCH_FOREST, ATGBiomes.SHRUBLAND, clearing);
         b.addSubBiome(Biomes.BIRCH_FOREST_HILLS, Biomes.PLAINS, clearing);
-        b.addSubBiome(Biomes.BIRCH_FOREST_HILLS, ATGBiomes.SHRUBLAND, clearing);
-        b.addSubBiome(Biomes.ROOFED_FOREST, ATGBiomes.WOODLAND, clearing);
-        b.addSubBiome(Biomes.ROOFED_FOREST, ATGBiomes.SHRUBLAND, clearing);
+        //b.addSubBiome(Biomes.BIRCH_FOREST_HILLS, ATGBiomes.SHRUBLAND, clearing);
+        //b.addSubBiome(Biomes.ROOFED_FOREST, ATGBiomes.WOODLAND, clearing);
+        //b.addSubBiome(Biomes.ROOFED_FOREST, ATGBiomes.SHRUBLAND, clearing);
         b.addSubBiome(Biomes.TAIGA, Biomes.PLAINS, clearing*2);
         b.addSubBiome(Biomes.TAIGA_HILLS, Biomes.PLAINS, clearing*2);
         b.addSubBiome(Biomes.COLD_TAIGA, Biomes.ICE_PLAINS, clearing*2);
@@ -180,9 +180,9 @@ public class DefaultBiomeSettings extends BiomeSettings {
         b.addHillBiome(Biomes.COLD_TAIGA, Biomes.ICE_MOUNTAINS, mountain);
         b.addHillBiome(Biomes.JUNGLE, Biomes.JUNGLE_HILLS, hills);
         b.addHillBiome(Biomes.ICE_PLAINS, Biomes.ICE_MOUNTAINS, mountain);
-        b.addHillBiome(ATGBiomes.TUNDRA, Biomes.EXTREME_HILLS, upperhills);
+        /*b.addHillBiome(ATGBiomes.TUNDRA, Biomes.EXTREME_HILLS, upperhills);
         b.addHillBiome(ATGBiomes.TUNDRA, Biomes.ICE_MOUNTAINS, mountain);
-        b.addHillBiome(ATGBiomes.SHRUBLAND, Biomes.EXTREME_HILLS, mountain);
+        b.addHillBiome(ATGBiomes.SHRUBLAND, Biomes.EXTREME_HILLS, mountain);*/
         b.addHillBiome(Biomes.DESERT, Biomes.DESERT_HILLS, hills);
 
 
