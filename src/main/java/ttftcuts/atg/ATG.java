@@ -13,7 +13,7 @@ import ttftcuts.atg.configuration.ConfigHandler;
 import ttftcuts.atg.generator.GlobalRegistry;
 import ttftcuts.atg.proxy.CommonProxy;
 
-@Mod(modid = ATG.MODID, version = ATG.VERSION, acceptedMinecraftVersions = "[1.12,1.13)", acceptableRemoteVersions = "*")
+@Mod(modid = ATG.MODID, version = ATG.VERSION, acceptedMinecraftVersions = "[1.12,1.13)", acceptableRemoteVersions = "*", dependencies = "required-before:lostcities")
 public class ATG
 {
     public static final String MODID = "atg";
