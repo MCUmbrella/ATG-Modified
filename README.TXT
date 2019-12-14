@@ -1,8 +1,11 @@
-# This is modified version of ATG by MCUmbrella!
+This is modified version of ATG by MCUmbrella!
+==============================================
 The original version of ATG is here: "https://github.com/TTFTCUTS/ATG"
 This version of ATG updated build environment, removed original ATG biomes and added LostCities support(provided by "thraaawn").
+==============================================
 
-#Usage: 
+Usage: 
+
   ATG only:
     Client:
       - Enter create world menu, click "More world options", click "World type" button until it switched to "ATG - Alternate", and then create it.
