@@ -1,7 +1,6 @@
 package ttftcuts.atg.compat.builtin;
 
 import net.minecraft.init.Biomes;
-//import ttftcuts.atg.ATGBiomes;
 import ttftcuts.atg.generator.biome.BiomeRegistry.EnumBiomeCategory;
 import ttftcuts.atg.settings.BiomeSettingsBuilder;
 
@@ -18,12 +17,6 @@ public class BOPModule extends ProvidedBiomeModule {
 
         BiomeSettingsBuilder b = new BiomeSettingsBuilder(this.settings, "biomesoplenty");
 
-        //------ Replacements ---------------------------------------------------------
-
-        /*b.replaceBiome(ATGBiomes.SHRUBLAND, "shrubland");
-        b.replaceBiome(ATGBiomes.WOODLAND, "woodland");
-        b.replaceBiome(ATGBiomes.GRAVEL_BEACH, "gravel_beach");
-        b.replaceBiome(ATGBiomes.TUNDRA, "tundra");*/
         //------ Biomes ---------------------------------------------------------
 
         // plains
@@ -128,7 +121,6 @@ public class BOPModule extends ProvidedBiomeModule {
 
         // ocean
         b.getGroup(EnumBiomeCategory.OCEAN, "Ocean")
-                //.addBiome("coral_reef", very_uncommon)
                 .addBiome("kelp_forest", uncommon);
 
 
@@ -195,7 +187,6 @@ public class BOPModule extends ProvidedBiomeModule {
         b.addSubBiome(Biomes.FOREST_HILLS, "mountain_foothills", 1.0);
         b.addSubBiome("overgrown_cliffs", Biomes.JUNGLE, 0.2);
         b.addSubBiome("overgrown_cliffs", "bamboo_forest", 0.1);
-        //b.addSubBiome("overgrown_cliffs", ATGBiomes.TROPICAL_SHRUBLAND, 0.1);
 
         b.addSubBiome(Biomes.JUNGLE_HILLS, "overgrown_cliffs", clearing);
 

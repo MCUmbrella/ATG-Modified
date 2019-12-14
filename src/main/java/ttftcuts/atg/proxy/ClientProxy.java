@@ -1,7 +1,6 @@
 package ttftcuts.atg.proxy;
 
 import net.minecraftforge.fml.common.event.*;
-import ttftcuts.atg.tweaks.GrassColours;
 
 public class ClientProxy extends CommonProxy {
     @Override
@@ -22,16 +21,13 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void loadComplete(FMLLoadCompleteEvent event) {
         super.loadComplete(event);
-        GrassColours.init();
     }
 
     @Override
     public void serverStarting(FMLServerStartingEvent event) {
-        GrassColours.clearCache();
     }
 
     @Override
     public void serverStopped(FMLServerStoppedEvent event) {
-        GrassColours.clearCache();
     }
 }

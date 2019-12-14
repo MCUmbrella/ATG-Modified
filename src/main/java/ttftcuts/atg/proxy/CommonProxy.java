@@ -7,14 +7,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ttftcuts.atg.ATG;
-//import ttftcuts.atg.ATGBiomes;
-//import ttftcuts.atg.generator.biome.VillageBlocks;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
     @SubscribeEvent
     public static void onBiomeRegistry(RegistryEvent.Register<Biome> event) {
-        //ATGBiomes.init(event.getRegistry());
     }
 
     public void preInit(FMLPreInitializationEvent event) {
@@ -22,7 +19,6 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent event) {
-        //MinecraftForge.TERRAIN_GEN_BUS.register(new VillageBlocks());
         ATG.modCompat.init();
     }
 
