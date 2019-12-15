@@ -11,7 +11,6 @@ import ttftcuts.atg.compat.ModCompat;
 import ttftcuts.atg.compat.lostcities.LostCitiesEventHandler;
 import ttftcuts.atg.configuration.ConfigHandler;
 import ttftcuts.atg.generator.GlobalRegistry;
-import ttftcuts.atg.proxy.CommonProxy;
 
 @Mod(modid = ATG.MODID, version = ATG.VERSION, acceptedMinecraftVersions = "[1.12,1.13)", acceptableRemoteVersions = "*", dependencies = "required-before:lostcities")
 public class ATG
@@ -30,9 +29,6 @@ public class ATG
     @Mod.Instance(MODID)
     public static ATG instance;
 
-    @SidedProxy(clientSide = "ttftcuts.atg.proxy.ClientProxy", serverSide = "ttftcuts.atg.proxy.CommonProxy")
-    public static CommonProxy proxy;
-
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
@@ -40,24 +36,19 @@ public class ATG
         worldType = new WorldTypeATG("atg");
 
         MinecraftForge.EVENT_BUS.register(LostCitiesEventHandler.class);
-
-        proxy.preInit(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        proxy.init(event);
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        proxy.postInit(event);
     }
 
     @Mod.EventHandler
     public void loadComplete(FMLLoadCompleteEvent event) {
-        proxy.loadComplete(event);
     }
 
     @Mod.EventHandler
@@ -67,11 +58,9 @@ public class ATG
 
     @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event) {
-        proxy.serverStarting(event);
     }
 
     @Mod.EventHandler
     public void serverStopped(FMLServerStoppedEvent event) {
-        proxy.serverStopped(event);
     }
 }
