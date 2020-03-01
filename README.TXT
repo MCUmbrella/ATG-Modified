@@ -1,3 +1,5 @@
+WARNING: Except for my Github page and all pages that I allow to forward, NO PAGES WILL GET ANY SUOOPRT FROM ME.
+
 This is modified version of ATG by MCUmbrella!
 ==============================================
 The original version of ATG is here: "https://github.com/TTFTCUTS/ATG"
