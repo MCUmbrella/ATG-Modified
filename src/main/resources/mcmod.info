@@ -1,12 +1,12 @@
 [
 {
   "modid": "atg",
-  "name": "Alternate Terrain Generation",
+  "name": "Alternate Terrain Generation Modified",
   "description": "ATG with LostCities support and removed new biomes built into original ATG.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "https://github.com/MCUmbrella/ATG-LCSupport-NoOtherBiomes",
-  "updateUrl": "https://github.com/MCUmbrella/ATG-LCSupport-NoOtherBiomes/releases",
+  "url": "https://github.com/MCUmbrella/ATG-Modified",
+  "updateUrl": "https://github.com/MCUmbrella/ATG-Modified/releases",
   "authorList": ["TTFTCUTS", "thraaawn", "MCUmbrella"],
   "credits": "",
   "logoFile": "",

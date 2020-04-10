@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraftforge.fml.common.Optional;
 import ttftcuts.atg.generator.biome.BiomeRegistry;
 import ttftcuts.atg.settings.ChunkGeneratorSettings;
 import ttftcuts.atg.settings.WorldSettings;
@@ -17,6 +18,7 @@ import ttftcuts.atg.util.MathUtil;
 import java.util.HashMap;
 import java.util.Map;
 
+@Optional.Interface(iface = "mcjty.lostcities.api.IChunkPrimerFactory", modid = "lostcities")
 public class ChunkProviderATG extends ChunkProviderBasic implements IChunkPrimerFactory {
     public static final int BLEND_RADIUS = 5;
     public static final Kernel BLEND_KERNEL = new Kernel(BLEND_RADIUS, (int x, int z) -> {

@@ -1,9 +1,7 @@
 package ttftcuts.atg;
 
-import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +10,7 @@ import ttftcuts.atg.compat.lostcities.LostCitiesEventHandler;
 import ttftcuts.atg.configuration.ConfigHandler;
 import ttftcuts.atg.generator.GlobalRegistry;
 
-@Mod(modid = ATG.MODID, version = ATG.VERSION, acceptedMinecraftVersions = "[1.12,1.13)", acceptableRemoteVersions = "*", dependencies = "required-before:lostcities")
+@Mod(modid = ATG.MODID, version = ATG.VERSION, acceptedMinecraftVersions = "[1.12,1.13)", acceptableRemoteVersions = "*")
 public class ATG
 {
     public static final String MODID = "atg";
@@ -32,10 +30,14 @@ public class ATG
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        System.out.println("ATG Modified is loading!");
         config = new ConfigHandler(event.getSuggestedConfigurationFile());
         worldType = new WorldTypeATG("atg");
-
-        MinecraftForge.EVENT_BUS.register(LostCitiesEventHandler.class);
+        System.out.println("Trying to add LostCities support");
+        try {
+            MinecraftForge.EVENT_BUS.register(LostCitiesEventHandler.class);
+            System.out.println("Congratulations. ATG Modified added LostCities support");
+        }catch (Throwable e){System.out.println("Cannot add LostCities support. Maybe you have no LostCities installed or have invalid LostCities version. "+e.toString());}
     }
 
     @Mod.EventHandler
