@@ -6,8 +6,6 @@
 ##ForgeGradle
 /run
 /out
-gradlew
-gradlew.bat
 
 ## idea
 /.idea
@@ -22,7 +20,5 @@ gradlew.bat
 /.project
 /bin
 /classes
-gradle/wrapper/gradle-wrapper.jar
-gradle/wrapper/gradle-wrapper.properties
 build.bat
 *.launch
