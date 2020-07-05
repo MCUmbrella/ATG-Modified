@@ -13,7 +13,8 @@ jobs:
         keys:
         - v1-dependencies-{{ checksum "build.gradle" }}
         - v1-dependencies-
-    - run: dos2unix ./gradlew
+    - run: cat ./gradlew | tr -d '\r' > ./gradlew.tmp
+    - run: mv ./gradlew.tmp ./gradlew
     - run: chmod +x ./gradlew
     - run: ./gradlew build
     - save_cache:
