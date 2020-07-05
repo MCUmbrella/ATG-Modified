@@ -37,5 +37,5 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       - store_artifacts:
-        path: ~/ATG-Modified/build/libs
-        destination: ATG-Modified
+          path: ~/ATG-Modified/build/libs
+          destination: ATG-Modified
